@@ -6,6 +6,11 @@ contract Detection{
     
     uint items=0;
     
+    struct State{
+        string description;
+        address person;
+    }
+    
     struct Medicine{
         string MedicineName;
         uint MedicineId;
@@ -15,6 +20,8 @@ contract Detection{
         uint Rate;
         string Ingredients;
         string Description;
+        uint256 totalStates;
+        mapping (uint256 => State) positions;
     }
     
     mapping(uint=>Medicine) AllMedicines;
@@ -34,7 +41,7 @@ contract Detection{
 
     
     function AddMedicine(uint _rate,string memory _name,string memory _company,string memory _date,string memory _ingredients,string memory _description)public returns(bool){
-            Medicine memory NewMedicine=Medicine(_name,items,_company,msg.sender,_date,_rate,_ingredients,_description);
+            Medicine memory NewMedicine=Medicine(_name,items,_company,msg.sender,_date,_rate,_ingredients,_description,0);
             AllMedicines[items]=NewMedicine;
             items = items+1;
             emit Added(items-1);
@@ -54,13 +61,21 @@ contract Detection{
            output=concat(output,AllMedicines[_id].Ingredients);
            output=concat(output,"<br>Description: ");
            output=concat(output,AllMedicines[_id].Description);
-           
+          for (uint256 j=0; j<AllMedicines[_id].totalStates; j++){
+            output=concat(output, AllMedicines[_id].positions[j].description);
+        }
            return output;
-           
-           
-    } 
-    
-    
-    
-    
+    }
+    function addState(uint _productId, string memory _date, string memory _location) public returns (string memory) {
+        require(_productId<items);
+        string memory desc="<br><br><b>Date: ";
+        desc=concat(desc, _date);
+        desc=concat(desc, "</b><br>Location: ");
+        desc=concat(desc, _location);
+        State memory newState = State({person: msg.sender, description: desc});
+        AllMedicines[_productId].positions[ AllMedicines[_productId].totalStates ]=newState;
+        AllMedicines[_productId].totalStates = AllMedicines[_productId].totalStates +1;
+        return desc;
+    }
+
 }
