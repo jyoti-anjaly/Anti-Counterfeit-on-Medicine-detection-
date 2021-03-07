@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <div class="navbar-nav">
+                <a class="nav-link signin_links" aria-current="page" href="#" id="scan_product_link">ScanProduct</a>
+                <a class="nav-link manufracturer_link" href="#" id="add_product_link">Addproduct</a>
+                <a class="nav-link suplier_link" href="#" id="add_supply_chain_link">Add Supplychain</a>
+                <a class="nav-link signin_links" href="#" id="logout">Logout</a>
+            </div>
+    </nav>
+    <!-- home page -->
+    <!-- Todo: Add Home Page Component -->
+    <div class="home_page">
+        <a href="#" id="signup_link">Signup</a>
+        <a href="#" id="signin_link">Signin</a>
+    </div>
+    <!-- signup page -->
+    <div class="signup_page">
+        <div class="login-box">
+            <h1>Signup</h1>
+            <div class="textbox">
+                <i class="fas fa-user"></i>
+                <input type="email" placeholder="Username" id="email_up">
+            </div>
+            <div class="textbox">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" id="password_up">
+            </div>
+            <h5>Signup as</h5>
+            <label class="radio-inline"><input id="manufracturer" type="radio" name="optradio">Manufacturer</label>
+            <label class="radio-inline"><input id="suplier" type="radio" name="optradio">Supplier</label>
+            <label class="radio-inline"><input id="customer" type="radio" name="optradio" checked>Customer</label>
+            <input class="btn" type="button" name="" value="Sign up" id="signup_btn">
+        </div>
+    </div>
+
+    <!--Sign in page -->
+    <div class="signin_page">
+        <div class="login-box">
+            <h1>Login</h1>
+            <div class="textbox">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Username" name="" value="" id="email_in">
+            </div>
+            <div class="textbox">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" name="" value="" id="password_in">
+            </div>
+            <input class="btn" type="button" name="" value="Sign in" id="signin_btn">
+
+        </div>
+    </div>
+    <div class="scan_id_page">
+        <!-- Todo: Add Scan Page Component -->
+        Scan here
+    </div>
+    <div class="add_medicine_page">
+        <!-- Todo: Add Medicine Page Component -->
+        Addmedicine Here
+    </div>
+    <div class="add_track_page">
+        <!-- Todo: Add track Page Component -->
+        Add track
+    </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="auth.js"></script>
+
+
+</body>
+
+</html>

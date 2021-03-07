@@ -1,7 +1,9 @@
-@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-body{
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+.signin_page,.signup_page{
 	margin: 0;
 	padding: 0;
+    height:100vh;
+    position: relative;
 	font-family: sans-serif;
 	background: url(myriam-zilles-KltoLK6Mk-g-unsplash.jpg) no-repeat;
 	background-size: cover;
