@@ -122,6 +122,15 @@
             home_page.hide();
             console.log("clicked");
         })
+        $("#add_track_link").click(() => {
+            signup_page.hide();
+            add_medicine_page.hide();
+            scan_page.hide();
+            signin_page.hide();
+            add_track_page.show();
+            home_page.hide();
+            console.log("clicked");
+        })
 
 
         var firebaseConfig = {
